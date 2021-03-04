@@ -1,4 +1,44 @@
 // The second argument/parameter is expected to be a (callback) function
+/* 
+const array1 = ['a', 'b', 'c'];
+
+array1.forEach(element => console.log(element));
+
+// expected output: "a"
+// expected output: "b"
+// expected output: "c"
+
+.forEach(func)
+var myArray = [1, 2, 3, 4, 5];
+  myArray.forEach(function(elem){
+  console.log(elem)
+
+let myArray = ["Alice", "Bob", "Waldo", "Winston"];
+  myArray.forEach(function(names){ */
+
+/*[1, 2, 3, 4].forEach(function(currentElement){
+  console.log(currentElement)
+})
+
+[1, 2, 3, 4].forEach(currentElement => console.log(currentElement))
+
+[1, 2, 3, 4].forEach(currentElement => {
+  if (currentElement > 2) {
+    console.log(currentElement)
+  }
+  }
+ )*/
+
+const newFindWaldo = function(names, found) {
+  names.forEach((name, index) => {
+    if (name === "Waldo") {
+      found(index);   // execute callback
+    } 
+  } )
+
+  }
+
+
 const findWaldo = function(names, found) {
   for (let i = 0; i < names.length; i++) {
     let name = names[i];
@@ -12,7 +52,7 @@ const actionWhenFound = function(index) {
   console.log(`Found Waldo at ${index}!`);
 }
 
-findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+newFindWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
 /* Modify the callback function in the previous example so that it accepts 
 a single argument index and logs it. 
 The problem should therefore output something like "Found Waldo at index 2!".
